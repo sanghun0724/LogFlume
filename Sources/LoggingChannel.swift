@@ -11,14 +11,26 @@ public protocol LoggingChannel: Hashable {
     /// channnel's concurrency queue
     var queue: DispatchQueue { get }
     
+    func sendLog(
+        _ level: LogFlume.Level,
+        fileName: String,
+        line: UInt,
+        funcName: String,
+        threadName: String,
+        message: String,
+        printerType: LogFlume.PrinterType,
+        targetValue: Any
+    ) -> String?
+    
     func performLogging(
         _ level: LogFlume.Level,
         fileName: String,
         line: UInt,
         funcName: String,
         threadName: String,
-        message: @autoclosure () -> Any,
-        printerType: LogFlume.PrinterType
+        message: String,
+        printerType: LogFlume.PrinterType,
+        targetValue: Any
     ) -> String?
     
 }
@@ -30,12 +42,13 @@ extension LoggingChannel {
         fileName: String,
         line: UInt,
         funcName: String,
-        message: @autoclosure () -> Any,
+        threadName:String,
+        message: String,
         printerType: LogFlume.PrinterType,
         targetValue: Any
     ) -> String? {
         
-        
+        printLog(message, .debug, target: [1])
         
         return nil
     }
@@ -57,6 +70,21 @@ extension LoggingChannel {
             Swift.print(target)
         }
     }
+    
+//    private func logString(_ level: Log.Level, fileName: String, line: UInt, funcName: String) -> String {
+//        let file = fileName.components(separatedBy: "/").last ?? ""
+//        switch formatType {
+//        case .short:
+//            return "\(level.string)"
+//        case .medium:
+//            return "\(level.string) \(funcName)"
+//        case .long:
+//            return "\(time): \(level.string) \(file):\(line) \(funcName)"
+//        case .full:
+//            let thread = threadName
+//            return "\(time): \(level.string) \(file):\(line) \(funcName) [\(thread)]"
+//        }
+//    }
 }
 
 

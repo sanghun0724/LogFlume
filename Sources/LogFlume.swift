@@ -64,7 +64,8 @@ open class LogFlume {
         funcName: String,
         threadName: String,
         message: @autoclosure () -> Any,
-        printerType: LogFlume.PrinterType
+        printerType: LogFlume.PrinterType,
+        targetValue: Any
     ) {
         var logMessage: String = "\(message())"
         
@@ -72,7 +73,8 @@ open class LogFlume {
             let channelQueue = channel.queue
             
             channelQueue.async {
-                let _ = channel.performLogging(level, fileName: fileName, line: line, funcName: funcName, message: logMessage, printerType: printerType)
+                // TODO: Thread name needed
+                let _ = channel.performLogging(level, fileName: fileName, line: line, funcName: funcName, threadName: threadName, message: logMessage, printerType: printerType, targetValue: targetValue)
             }
             
         }

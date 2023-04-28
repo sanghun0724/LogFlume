@@ -28,11 +28,13 @@ final class LogFlumeTests: XCTestCase {
         XCTAssertEqual(log.countChannels(), 0)
         XCTAssertTrue(log.addChannels(mainXcode))
         XCTAssertEqual(log.countChannels(), 1)
+        XCTAssertFalse(log.addChannels(mainXcode))
+        XCTAssertEqual(log.countChannels(), 1)
         
         let subXcode = XcodeLoggingChannel()
         
-        XCTAssertFalse(log.addChannels(subXcode))
-        XCTAssertEqual(log.countChannels(), 1)
+        XCTAssertTrue(log.addChannels(subXcode))
+        XCTAssertEqual(log.countChannels(), 2)
     }
 
     func testRemoveChannel() throws {
@@ -52,4 +54,38 @@ final class LogFlumeTests: XCTestCase {
         XCTAssertEqual(log.countChannels(), 0)
     }
 
+}
+
+
+private class MockChannel: LoggingChannel {
+    static func == (lhs: MockChannel, rhs: MockChannel) -> Bool {
+        return false
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(mockLine)
+    }
+    
+    var mockLevel: LogFlume.Level?
+    var mockMessage: String?
+    var mockThreadName: String?
+    var mockFileName: String?
+    var mockFunctionName: String?
+    var mockLine: UInt?
+    var mockValue: (Any?)?
+    
+    var queue: DispatchQueue = .main
+    
+    func sendLog(_ level: LogFlume.Level, fileName: String, line: UInt, funcName: String, threadName: String, message: String, printerType: LogFlume.PrinterType, targetValue: Any) -> String? {
+        mockLevel = level
+        mockMessage = message
+        mockThreadName = threadName
+        mockFileName = fileName
+        mockFunctionName = funcName
+        mockLine = line
+        mockValue = targetValue
+        
+        return ""
+    }
+    
 }
