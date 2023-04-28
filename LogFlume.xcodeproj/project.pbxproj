@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B6AFC8B729F6A73800C9E16F /* LogFlume.docc in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8B629F6A73800C9E16F /* LogFlume.docc */; };
 		B6AFC8BD29F6A73800C9E16F /* LogFlume.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6AFC8B229F6A73800C9E16F /* LogFlume.framework */; };
 		B6AFC8C229F6A73800C9E16F /* LogFlumeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8C129F6A73800C9E16F /* LogFlumeTests.swift */; };
-		B6AFC8C329F6A73800C9E16F /* LogFlume.h in Headers */ = {isa = PBXBuildFile; fileRef = B6AFC8B529F6A73800C9E16F /* LogFlume.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6AFC8CF29F6A81000C9E16F /* LogFlume.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8CE29F6A81000C9E16F /* LogFlume.swift */; };
+		B6AFC8D229F6A88000C9E16F /* LoggingChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8D029F6A88000C9E16F /* LoggingChannel.swift */; };
+		B6AFC8D329F6A88000C9E16F /* LoggingChannelSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8D129F6A88000C9E16F /* LoggingChannelSet.swift */; };
+		B6AFC8D829F6BD8500C9E16F /* XcodeLoggingChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8D729F6BD8500C9E16F /* XcodeLoggingChannel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,10 +27,13 @@
 
 /* Begin PBXFileReference section */
 		B6AFC8B229F6A73800C9E16F /* LogFlume.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LogFlume.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B6AFC8B529F6A73800C9E16F /* LogFlume.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogFlume.h; sourceTree = "<group>"; };
-		B6AFC8B629F6A73800C9E16F /* LogFlume.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = LogFlume.docc; sourceTree = "<group>"; };
 		B6AFC8BC29F6A73800C9E16F /* LogFlumeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogFlumeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6AFC8C129F6A73800C9E16F /* LogFlumeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFlumeTests.swift; sourceTree = "<group>"; };
+		B6AFC8CC29F6A75F00C9E16F /* LogFlume.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LogFlume.md; sourceTree = "<group>"; };
+		B6AFC8CE29F6A81000C9E16F /* LogFlume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFlume.swift; sourceTree = "<group>"; };
+		B6AFC8D029F6A88000C9E16F /* LoggingChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingChannel.swift; sourceTree = "<group>"; };
+		B6AFC8D129F6A88000C9E16F /* LoggingChannelSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingChannelSet.swift; sourceTree = "<group>"; };
+		B6AFC8D729F6BD8500C9E16F /* XcodeLoggingChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggingChannel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +58,9 @@
 		B6AFC8A829F6A73800C9E16F = {
 			isa = PBXGroup;
 			children = (
-				B6AFC8B429F6A73800C9E16F /* LogFlume */,
-				B6AFC8C029F6A73800C9E16F /* LogFlumeTests */,
+				B6AFC8CC29F6A75F00C9E16F /* LogFlume.md */,
+				B6AFC8B429F6A73800C9E16F /* Sources */,
+				B6AFC8C029F6A73800C9E16F /* Tests */,
 				B6AFC8B329F6A73800C9E16F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,16 +74,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B6AFC8B429F6A73800C9E16F /* LogFlume */ = {
+		B6AFC8B429F6A73800C9E16F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B6AFC8B529F6A73800C9E16F /* LogFlume.h */,
-				B6AFC8B629F6A73800C9E16F /* LogFlume.docc */,
+				B6AFC8D029F6A88000C9E16F /* LoggingChannel.swift */,
+				B6AFC8D129F6A88000C9E16F /* LoggingChannelSet.swift */,
+				B6AFC8CE29F6A81000C9E16F /* LogFlume.swift */,
+				B6AFC8D729F6BD8500C9E16F /* XcodeLoggingChannel.swift */,
 			);
-			path = LogFlume;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		B6AFC8C029F6A73800C9E16F /* LogFlumeTests */ = {
+		B6AFC8C029F6A73800C9E16F /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B6AFC8CD29F6A7EC00C9E16F /* LogFlumeTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B6AFC8CD29F6A7EC00C9E16F /* LogFlumeTests */ = {
 			isa = PBXGroup;
 			children = (
 				B6AFC8C129F6A73800C9E16F /* LogFlumeTests.swift */,
@@ -92,7 +108,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6AFC8C329F6A73800C9E16F /* LogFlume.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +162,7 @@
 				TargetAttributes = {
 					B6AFC8B129F6A73800C9E16F = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					B6AFC8BB29F6A73800C9E16F = {
 						CreatedOnToolsVersion = 14.2;
@@ -194,7 +210,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B6AFC8B729F6A73800C9E16F /* LogFlume.docc in Sources */,
+				B6AFC8CF29F6A81000C9E16F /* LogFlume.swift in Sources */,
+				B6AFC8D829F6BD8500C9E16F /* XcodeLoggingChannel.swift in Sources */,
+				B6AFC8D229F6A88000C9E16F /* LoggingChannel.swift in Sources */,
+				B6AFC8D329F6A88000C9E16F /* LoggingChannelSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +287,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -325,7 +345,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -340,6 +361,7 @@
 		B6AFC8C729F6A73800C9E16F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -350,24 +372,33 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sangheon0724.LogFlume;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Debug;
 		};
 		B6AFC8C829F6A73800C9E16F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -378,28 +409,37 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sangheon0724.LogFlume;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx watchos watchsimulator";
+				SUPPORTS_MACCATALYST = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,4";
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
 			};
 			name = Release;
 		};
 		B6AFC8CA29F6A73800C9E16F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2L2K3UD2LK;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sangheon0724.LogFlumeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,10 +452,12 @@
 		B6AFC8CB29F6A73800C9E16F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2L2K3UD2LK;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sangheon0724.LogFlumeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
