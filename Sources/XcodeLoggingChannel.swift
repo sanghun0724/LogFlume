@@ -9,7 +9,6 @@ import Foundation
 
 public struct XcodeLoggingChannel: LoggingChannel {
     
-    
     public var queue: DispatchQueue = DispatchQueue(label: "xcode.queue", attributes: .concurrent)
     
     public func sendLog(
@@ -17,7 +16,6 @@ public struct XcodeLoggingChannel: LoggingChannel {
         fileName: String,
         line: UInt,
         funcName: String,
-        threadName: String,
         message: String,
         printerType: LogFlume.PrinterType,
         targetValue: Any
@@ -26,12 +24,9 @@ public struct XcodeLoggingChannel: LoggingChannel {
                                        fileName: fileName,
                                        line: line,
                                        funcName: funcName,
-                                       threadName: threadName,
                                        message: message,
                                        printerType: printerType,
                                        targetValue: targetValue)
-        
-        
         
         return logString
     }

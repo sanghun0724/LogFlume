@@ -53,6 +53,37 @@ final class LogFlumeTests: XCTestCase {
         XCTAssertTrue(log.removeChannels(xcode))
         XCTAssertEqual(log.countChannels(), 0)
     }
+    
+    func testLoggingAllChannels() throws {
+        let log = LogFlume.self
+        
+        let firstChannel = MockChannel()
+        
+        log.addChannels(firstChannel)
+        
+        log.excuteLogging(.info, fileName: "fileName", line: 18, funcName: "funcName", message: "message", printerType: .debug, targetValue: "targetValue")
+        
+        XCTAssertEqual(firstChannel.mockLevel, LogFlume.Level.info)
+        
+        XCTAssertEqual(firstChannel.mockFileName, "fileName")
+        
+        XCTAssertEqual(firstChannel.mockFunctionName, "funcName")
+        
+        XCTAssertEqual(firstChannel.mockPrinterType, .debug)
+        
+        XCTAssertEqual(firstChannel.mockMessage, "message")
+        
+        XCTAssertNotNil(firstChannel.mockValue)
+        
+    }
+    
+    func testLoggingWithoutChannel() {
+        let log = LogFlume.self
+        
+        //log.verbose("Where do I log to?")
+    }
+    
+    
 
 }
 
@@ -68,21 +99,21 @@ private class MockChannel: LoggingChannel {
     
     var mockLevel: LogFlume.Level?
     var mockMessage: String?
-    var mockThreadName: String?
     var mockFileName: String?
     var mockFunctionName: String?
     var mockLine: UInt?
-    var mockValue: (Any?)?
+    var mockPrinterType: LogFlume.PrinterType?
+    var mockValue: Any?
     
-    var queue: DispatchQueue = .main
+    var queue: DispatchQueue = .global()
     
-    func sendLog(_ level: LogFlume.Level, fileName: String, line: UInt, funcName: String, threadName: String, message: String, printerType: LogFlume.PrinterType, targetValue: Any) -> String? {
+    func sendLog(_ level: LogFlume.Level, fileName: String, line: UInt, funcName: String, message: String, printerType: LogFlume.PrinterType, targetValue: Any) -> String? {
         mockLevel = level
         mockMessage = message
-        mockThreadName = threadName
         mockFileName = fileName
         mockFunctionName = funcName
         mockLine = line
+        mockPrinterType = printerType
         mockValue = targetValue
         
         return ""

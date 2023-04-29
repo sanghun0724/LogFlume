@@ -10,20 +10,17 @@ import Foundation
 open class LogFlume {
 
     public static let version = "1.0.0"
+    public static let formatType: LogFlume.FormatType = .complete
     
-    private static let dateFormatter = DateFormatter()
-    private static var dateFormat: String = "yyyy-MM-dd HH:mm:ss.SSS"
+    internal static let dateFormatter = DateFormatter()
+    public static var dateFormat: String = "yyyy-MM-dd HH:mm:ss.SSS"
     
     /// channels queue
     private static let queue = DispatchQueue(label: "channels queue", attributes: .concurrent)
     
     public private(set) static var channels = LoggingChannelSet()
     
-    // what we need(?)
-    // 1. queue 동시성 제어 (actor)
-    // 2. channels 보낼 채널들 관리
-    // 3. DateFormatter 언제 로그 날렸는지 확인
-    // 4.
+    // MARK: set operations
     
     /// Returns the success or failure of a function in Bool.
     @discardableResult
@@ -57,88 +54,30 @@ open class LogFlume {
         channels.countChannels()
     }
     
-    public static func performLogging(
+    // MARK: Logging
+    
+    public static func verbose() {
+        
+    }
+    
+    public static func excuteLogging(
         _ level: LogFlume.Level,
         fileName: String,
         line: UInt,
         funcName: String,
-        threadName: String,
         message: @autoclosure () -> Any,
         printerType: LogFlume.PrinterType,
-        targetValue: Any
+        targetValue: Any...
     ) {
-        var logMessage: String = "\(message())"
+        let logMessage: String = "\(message())"
         
         channels.iterate { channel in
             let channelQueue = channel.queue
             
             channelQueue.async {
-                // TODO: Thread name needed
-                let _ = channel.performLogging(level, fileName: fileName, line: line, funcName: funcName, threadName: threadName, message: logMessage, printerType: printerType, targetValue: targetValue)
+                let _ = channel.sendLog(level, fileName: fileName, line: line, funcName: funcName, message: logMessage, printerType: printerType, targetValue: targetValue)
             }
-            
         }
     }
-}
-
-
-
-extension LogFlume {
-    public enum PrinterType {
-        /// use `print()`
-        case `default`
-        
-        /// use `debugPrint()`
-        case debug
-        
-        /// use `dump()`
-//      ▿ 2 elements
-//        ▿ Person
-//          - name: "Alice"
-//          - age: 28
-//        ▿ Person
-//          - name: "Bob"
-//          - age: 35
-        case dump
-    }
-}
-
-
-extension LogFlume {
-    public enum FormatType {
-        /// [Level] ▷ Any...
-        case short
-        
-        /// [Level] file:line funcName ▷ Any...
-        case medium
-        
-        /// Time: [Level] file:line funcName ▷ Any...
-        case long
-        
-        /// Time: [Level] file:line funcName [Thread Name] ▷ Any...
-        case full
-    }
-}
-
-extension LogFlume {
-    public enum Level: String {
-        case verbose = "📢 [VERBOSE]"
-        case debug = "🛠 [DEBUG]"
-        case info = "💡 [INFO]"
-        case warning = "⚠️ [WARNING]"
-        case error = "🚨 [ERROR]"
-        
-        fileprivate func intValue() -> Int {
-            let _intValue: [Level: Int] = [
-                .verbose: 0,
-                .debug: 1,
-                .info: 2,
-                .warning: 3,
-                .error: 4
-            ]
-            
-            return _intValue[self] ?? 4
-        }
-    }
-
+    
 }

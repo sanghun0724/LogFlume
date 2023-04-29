@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// custom protocol set obejct 
 public class LoggingChannelSet {
     private var queue = DispatchQueue(label: "set.queue", attributes: .concurrent)
     private var _set = Set<AnyHashable>()
