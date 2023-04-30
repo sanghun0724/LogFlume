@@ -85,6 +85,45 @@ final class LogFlumeTests: XCTestCase {
         log.info("What Can I Do?", value: [123124123])
     }
     
+    func testSimpleLoggingWithValue() {
+        let log = LogFlume.self
+        log.formatType = .complete
+        log.dateFormat = "HH:mm"
+        let xcode = XcodeLoggingChannel()
+        XCTAssertTrue(log.addChannels(xcode))
+        
+        
+        // default simple logging
+        log.verbose("SHLEE is Pulple", value: [2,2,2,2,23,3,4])
+        log.verbose(123, value: "Char")
+        
+        struct TestStruct { let val = 1 }
+        log.info(-100000000000, value: TestStruct())
+        log.info(NSNull(), value: [[[2]]])
+        
+        log.error(Void(), value: Void())
+        log.error(1.0, value: 1.0)
+    }
+    
+    func testSimpleLoggingWithoutValue() {
+        let log = LogFlume.self
+        log.formatType = .complete
+        log.dateFormat = "HH:mm"
+        let xcode = XcodeLoggingChannel()
+        XCTAssertTrue(log.addChannels(xcode))
+        
+        
+        // default simple logging
+        log.verbose("SHLEE is Pulple")
+        log.verbose(123)
+        
+        log.info(-100000000000)
+        log.info(NSNull())
+        
+        log.error(Void())
+        log.error(1.0)
+    }
+    
 
 }
 
