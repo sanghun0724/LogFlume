@@ -24,10 +24,12 @@ public class LoggingChannelSet {
         }
     }
     
+    /// target element is need to be (LoggingChannel + Hasable)
     func insert<T>(_ channel: T) where T: LoggingChannel, T: Hashable {
         set.insert(AnyHashable(channel))
     }
     
+    /// target element is need to be (LoggingChannel + Hasable)
     func iterate(doing: (any LoggingChannel) -> Void ) {
         for item in set {
             guard let item = item as? (any LoggingChannel) else {
@@ -44,7 +46,7 @@ public class LoggingChannelSet {
     
     /// count all channels
     func countChannels() -> Int {
-        set.count 
+        set.count
     }
     
     /// remove first set element

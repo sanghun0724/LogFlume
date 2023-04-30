@@ -46,9 +46,9 @@
             filePath = "Sources/LogFlume.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "excuteLogging(_:fileName:line:funcName:message:printerType:targetValue:)"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
+            landmarkName = "executeLoggingWithTargetValue(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -94,8 +94,8 @@
             filePath = "Tests/LogFlumeTests/LogFlumeTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "sendLog(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Tests/LogFlumeTests/LogFlumeTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "sendLog(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -120,14 +120,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2347D040-3259-459B-8D2D-A9EE47D833F2"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/LoggingChannel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "performLogging(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -136,14 +136,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "36B60DA4-E48C-4DFF-BC9B-8F7E630CB9D6"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/LoggingChannel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "performLogging(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -152,15 +152,31 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "88E6F080-B922-472D-91D5-23DD817B6E6B"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sources/LoggingChannel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "performLogging(_:fileName:line:funcName:message:printerType:targetValue:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "717759B6-E206-49DE-98F1-902596EDBC6E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Sources/LoggingChannel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "defaultLogString(_:message:fileName:line:funcName:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

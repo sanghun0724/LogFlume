@@ -9,7 +9,7 @@ import Foundation
 
 public struct XcodeLoggingChannel: LoggingChannel {
     
-    public var queue: DispatchQueue = DispatchQueue(label: "xcode.queue", attributes: .concurrent)
+    public var queue: DispatchQueue = DispatchQueue(label: "xcode.serieal.queue")
     
     public func sendLog(
         _ level: LogFlume.Level,

@@ -11,11 +11,11 @@ import XCTest
 final class LogFlumeTests: XCTestCase {
 
     override func setUpWithError() throws {
-        
+        try super.setUpWithError()
     }
 
     override func tearDownWithError() throws {
-        
+        try super.tearDownWithError()
     }
 
     func testAddChannel() throws {
@@ -61,7 +61,7 @@ final class LogFlumeTests: XCTestCase {
         
         log.addChannels(firstChannel)
         
-        log.excuteLogging(.info, fileName: "fileName", line: 18, funcName: "funcName", message: "message", printerType: .debug, targetValue: "targetValue")
+//        log.excuteLogging(.info, fileName: "fileName", line: 18, funcName: "funcName", message: "message", printerType: .debug, targetValue: "targetValue")
         
         XCTAssertEqual(firstChannel.mockLevel, LogFlume.Level.info)
         
@@ -74,17 +74,22 @@ final class LogFlumeTests: XCTestCase {
         XCTAssertEqual(firstChannel.mockMessage, "message")
         
         XCTAssertNotNil(firstChannel.mockValue)
-        
+    
     }
+    
     
     func testLoggingWithoutChannel() {
         let log = LogFlume.self
         
         //log.verbose("Where do I log to?")
+        
+        let console = XcodeLoggingChannel()
+        log.addChannels(console)
+        
+        log.verbose("TEST")
+        log.verbose("VERBOSE", value: [123124123])
     }
     
-    
-
 }
 
 

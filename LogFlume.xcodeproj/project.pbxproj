@@ -14,7 +14,8 @@
 		B6AFC8D329F6A88000C9E16F /* LoggingChannelSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8D129F6A88000C9E16F /* LoggingChannelSet.swift */; };
 		B6AFC8D829F6BD8500C9E16F /* XcodeLoggingChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8D729F6BD8500C9E16F /* XcodeLoggingChannel.swift */; };
 		B6AFC8DA29FCFB0500C9E16F /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8D929FCFB0500C9E16F /* LogType.swift */; };
-		B6AFC8DC29FD24B600C9E16F /* LoggingChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8DB29FD24B600C9E16F /* LoggingChannelTests.swift */; };
+		B6AFC8DE29FD25C900C9E16F /* LoggingChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8DD29FD25C900C9E16F /* LoggingChannelTests.swift */; };
+		B6AFC8E029FE66BB00C9E16F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8DF29FE66BB00C9E16F /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +38,8 @@
 		B6AFC8D129F6A88000C9E16F /* LoggingChannelSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggingChannelSet.swift; sourceTree = "<group>"; };
 		B6AFC8D729F6BD8500C9E16F /* XcodeLoggingChannel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggingChannel.swift; sourceTree = "<group>"; };
 		B6AFC8D929FCFB0500C9E16F /* LogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
-		B6AFC8DB29FD24B600C9E16F /* LoggingChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingChannelTests.swift; sourceTree = "<group>"; };
+		B6AFC8DD29FD25C900C9E16F /* LoggingChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingChannelTests.swift; sourceTree = "<group>"; };
+		B6AFC8DF29FE66BB00C9E16F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				B6AFC8D729F6BD8500C9E16F /* XcodeLoggingChannel.swift */,
 				B6AFC8D929FCFB0500C9E16F /* LogType.swift */,
 				B6AFC8CE29F6A81000C9E16F /* LogFlume.swift */,
+				B6AFC8DF29FE66BB00C9E16F /* Extensions.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -102,7 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				B6AFC8C129F6A73800C9E16F /* LogFlumeTests.swift */,
-				B6AFC8DB29FD24B600C9E16F /* LoggingChannelTests.swift */,
+				B6AFC8DD29FD25C900C9E16F /* LoggingChannelTests.swift */,
 			);
 			path = LogFlumeTests;
 			sourceTree = "<group>";
@@ -217,11 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6AFC8DA29FCFB0500C9E16F /* LogType.swift in Sources */,
+				B6AFC8E029FE66BB00C9E16F /* Extensions.swift in Sources */,
 				B6AFC8CF29F6A81000C9E16F /* LogFlume.swift in Sources */,
 				B6AFC8D829F6BD8500C9E16F /* XcodeLoggingChannel.swift in Sources */,
 				B6AFC8D229F6A88000C9E16F /* LoggingChannel.swift in Sources */,
 				B6AFC8D329F6A88000C9E16F /* LoggingChannelSet.swift in Sources */,
-				B6AFC8DC29FD24B600C9E16F /* LoggingChannelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6AFC8C229F6A73800C9E16F /* LogFlumeTests.swift in Sources */,
+				B6AFC8DE29FD25C900C9E16F /* LoggingChannelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

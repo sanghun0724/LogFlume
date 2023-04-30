@@ -16,13 +16,13 @@ extension LogFlume {
         case debug
         
         /// use `dump()`
-//      ▿ 2 elements
-//        ▿ Person
-//          - name: "Alice"
-//          - age: 28
-//        ▿ Person
-//          - name: "Bob"
-//          - age: 35
+        //      ▿ 2 elements
+        //        ▿ Person
+        //          - name: "Alice"
+        //          - age: 28
+        //        ▿ Person
+        //          - name: "Bob"
+        //          - age: 35
         case dump
     }
 }
@@ -47,7 +47,7 @@ extension LogFlume {
             return _intValue[self] ?? 4
         }
     }
-
+    
 }
 
 extension LogFlume {
