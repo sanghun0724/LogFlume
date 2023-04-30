@@ -81,15 +81,11 @@ final class LogFlumeTests: XCTestCase {
     func testLoggingWithoutChannel() {
         let log = LogFlume.self
         
-        //log.verbose("Where do I log to?")
-        
-        let console = XcodeLoggingChannel()
-        log.addChannels(console)
-        
-        log.verbose("TEST")
-        log.verbose("VERBOSE", value: [123124123])
+        log.verbose("What Can I Do?")
+        log.info("What Can I Do?", value: [123124123])
     }
     
+
 }
 
 
