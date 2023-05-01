@@ -15,6 +15,7 @@ final class LogFlumeTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        let _ = LogFlume.removeAllChannels()
         try super.tearDownWithError()
     }
 

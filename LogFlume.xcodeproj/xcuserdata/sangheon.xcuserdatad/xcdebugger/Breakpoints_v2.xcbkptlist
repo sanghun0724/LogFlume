@@ -94,8 +94,8 @@
             filePath = "Tests/LogFlumeTests/LogFlumeTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "sendLog(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Tests/LogFlumeTests/LogFlumeTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "sendLog(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>
