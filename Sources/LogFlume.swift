@@ -9,11 +9,18 @@ import Foundation
 
 open class LogFlume {
     
-    public static let version = "0.1.0"
-    public static var formatType: LogFlume.FormatType = .complete // default
-    
+    internal static let version = "0.1.0"
+
     internal static let dateFormatter = DateFormatter()
+    
+    // MARK: Configure Setting
+    
+    /// default global formatType
+    public static var formatType: LogFlume.FormatType = .complete
+    /// default global date
     public static var dateFormat: String = "yyyy-MM-dd HH:mm:ss.SSS"
+    /// default global printerType
+    public static var printerType: LogFlume.PrinterType = .default
     
     /// channels queue
     private static let queue = DispatchQueue(label: "channels queue", attributes: .concurrent)
@@ -62,7 +69,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default,
+        printerType: PrinterType = printerType,
         value: Any...
     ) {
 #if swift(>=5)
@@ -90,7 +97,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default
+        printerType: PrinterType = printerType
     ) {
 #if swift(>=5)
         executeLoggingWithoutTargetValue(.verbose,
@@ -115,7 +122,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default,
+        printerType: PrinterType = printerType,
         value: Any...
     ) {
 #if swift(>=5)
@@ -143,7 +150,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default
+        printerType: PrinterType = printerType
     ) {
 #if swift(>=5)
         executeLoggingWithoutTargetValue(.debug,
@@ -168,7 +175,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default,
+        printerType: PrinterType = printerType,
         value: Any...
     ) {
 #if swift(>=5)
@@ -196,7 +203,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default
+        printerType: PrinterType = printerType
     ) {
 #if swift(>=5)
         executeLoggingWithoutTargetValue(.info,
@@ -221,7 +228,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default,
+        printerType: PrinterType = printerType,
         value: Any...
     ) {
 #if swift(>=5)
@@ -249,7 +256,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default
+        printerType: PrinterType = printerType
     ) {
 #if swift(>=5)
         executeLoggingWithoutTargetValue(.warning,
@@ -274,7 +281,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default,
+        printerType: PrinterType = printerType,
         value: Any...
     ) {
 #if swift(>=5)
@@ -302,7 +309,7 @@ open class LogFlume {
         file: String = #file,
         function: String = #function,
         line: UInt = #line,
-        printerType: PrinterType = .default
+        printerType: PrinterType = printerType
     ) {
 #if swift(>=5)
         executeLoggingWithoutTargetValue(.error,

@@ -14,8 +14,8 @@
             filePath = "Sources/XcodeLoggingChannel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "sendLog(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "Sources/LogFlume.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
+            startingLineNumber = "344"
+            endingLineNumber = "344"
             landmarkName = "executeLoggingWithTargetValue(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
             <Locations>
@@ -94,8 +94,8 @@
             filePath = "Tests/LogFlumeTests/LogFlumeTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "sendLog(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "Tests/LogFlumeTests/LogFlumeTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "sendLog(_:fileName:line:funcName:message:printerType:targetValue:)"
             landmarkType = "7">
          </BreakpointContent>

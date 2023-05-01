@@ -9,6 +9,8 @@ import Foundation
 
 public struct XcodeLoggingChannel: LoggingChannel {
     
+    public init() {}
+    
     public var queue: DispatchQueue = DispatchQueue(label: "xcode.serieal.queue")
     
     public func sendLog(

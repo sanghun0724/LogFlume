@@ -88,7 +88,7 @@ final class LogFlumeTests: XCTestCase {
     
     func testSimpleLoggingWithValue() {
         let log = LogFlume.self
-        log.formatType = .complete
+        log.formatType = .simple
         log.dateFormat = "HH:mm"
         let xcode = XcodeLoggingChannel()
         XCTAssertTrue(log.addChannels(xcode))
@@ -110,6 +110,7 @@ final class LogFlumeTests: XCTestCase {
         let log = LogFlume.self
         log.formatType = .complete
         log.dateFormat = "HH:mm"
+        log.printerType = .dump
         let xcode = XcodeLoggingChannel()
         XCTAssertTrue(log.addChannels(xcode))
         
