@@ -43,28 +43,24 @@ extension LoggingChannel {
         printerType: LogFlume.PrinterType,
         targetValue: Any
     ) -> String? {
-        var resolvedString = "" // default empty string
         let defaultLogString = defaultLogString(level,
                                                 message: message,
                                                 fileName: fileName,
                                                 line: line,
                                                 funcName: funcName)
         guard let items = targetValue as? [Any] else {
-            resolvedString = printSingleItemLog(defaultLogString, printerType, item: targetValue)
-            return ""
+            return printSingleItemLog(defaultLogString, printerType, item: targetValue)
         }
         
         switch items.count {
         case 0:
             Swift.print(defaultLogString)
-            resolvedString = defaultLogString
+            return defaultLogString
         case 1:
-            resolvedString = printSingleItemLog(defaultLogString, printerType, item: items[0])
+            return printSingleItemLog(defaultLogString, printerType, item: items[0])
         default:
-            resolvedString = printMultipleItemLog(defaultLogString, printerType, items: items)
+            return printMultipleItemLog(defaultLogString, printerType, items: items)
         }
-        
-        return resolvedString
     }
     
     private func name(_ value: Any) -> String {
@@ -80,8 +76,9 @@ extension LoggingChannel {
                 Swift.print("\(logString) ▽")
                 Swift.debugPrint(item)
             case .dump:
-                Swift.print("\(logString) ▽")
-                Swift.dump(item, name: name(item), indent: 2)
+                var dumpedString = String()
+                Swift.dump(item, to: &dumpedString, name: name(item), indent: 2)
+                Swift.print(NSString(string: "\(logString) \n▽\(dumpedString)"))
             case .default:
                 Swift.print("\(logString) ▽")
                 Swift.print(item)

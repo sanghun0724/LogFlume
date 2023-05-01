@@ -61,7 +61,7 @@ final class LogFlumeTests: XCTestCase {
         
         log.addChannels(firstChannel)
         
-//        log.excuteLogging(.info, fileName: "fileName", line: 18, funcName: "funcName", message: "message", printerType: .debug, targetValue: "targetValue")
+        log.executeLoggingWithTargetValue(.info, fileName: "fileName", line: 18, funcName: "funcName", message: "message", printerType: .debug, targetValue: "targetValue")
         
         XCTAssertEqual(firstChannel.mockLevel, LogFlume.Level.info)
         
@@ -94,7 +94,7 @@ final class LogFlumeTests: XCTestCase {
         
         
         // default simple logging
-        log.verbose("SHLEE is Pulple", value: [2,2,2,2,23,3,4])
+        log.verbose("SHLEE is Pulple",printerType: .dump, value: [2,2,2,2,23,3,4])
         log.verbose(123, value: "Char")
         
         struct TestStruct { let val = 1 }
