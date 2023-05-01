@@ -1,9 +1,5 @@
-//
-//  Package.swift
-//  LogFlume
-//
-//  Created by sangheon on 2023/05/01.
-//
+// swift-tools-version:5.0
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
