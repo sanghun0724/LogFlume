@@ -4,7 +4,6 @@
 import PackageDescription
 
 let package = Package(
-    platforms: [.iOS(.v13)],
     name: "LogFlume",
     products: [
         .library(name: "LogFlume", targets: ["LogFlume"])
