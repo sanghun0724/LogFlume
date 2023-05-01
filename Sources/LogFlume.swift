@@ -9,7 +9,7 @@ import Foundation
 
 open class LogFlume {
     
-    public static let version = "1.0.0"
+    public static let version = "0.1.0"
     public static var formatType: LogFlume.FormatType = .complete // default
     
     internal static let dateFormatter = DateFormatter()

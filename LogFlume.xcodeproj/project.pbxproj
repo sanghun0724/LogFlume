@@ -16,7 +16,6 @@
 		B6AFC8DA29FCFB0500C9E16F /* LogType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8D929FCFB0500C9E16F /* LogType.swift */; };
 		B6AFC8DE29FD25C900C9E16F /* LoggingChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8DD29FD25C900C9E16F /* LoggingChannelTests.swift */; };
 		B6AFC8E029FE66BB00C9E16F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8DF29FE66BB00C9E16F /* Extensions.swift */; };
-		B6AFC8E229FE72B200C9E16F /* XcodeLoggingChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AFC8E129FE72B200C9E16F /* XcodeLoggingChannelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,6 @@
 		B6AFC8D929FCFB0500C9E16F /* LogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
 		B6AFC8DD29FD25C900C9E16F /* LoggingChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingChannelTests.swift; sourceTree = "<group>"; };
 		B6AFC8DF29FE66BB00C9E16F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		B6AFC8E129FE72B200C9E16F /* XcodeLoggingChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeLoggingChannelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 			children = (
 				B6AFC8C129F6A73800C9E16F /* LogFlumeTests.swift */,
 				B6AFC8DD29FD25C900C9E16F /* LoggingChannelTests.swift */,
-				B6AFC8E129FE72B200C9E16F /* XcodeLoggingChannelTests.swift */,
 			);
 			path = LogFlumeTests;
 			sourceTree = "<group>";
@@ -236,7 +233,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6AFC8C229F6A73800C9E16F /* LogFlumeTests.swift in Sources */,
-				B6AFC8E229FE72B200C9E16F /* XcodeLoggingChannelTests.swift in Sources */,
 				B6AFC8DE29FD25C900C9E16F /* LoggingChannelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
