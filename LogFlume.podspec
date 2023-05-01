@@ -16,6 +16,8 @@ LogFlume is a lightweight, scalable, useful, and fast logging library for Swift.
   s.license      = "MIT"
   s.author       = { "Sangheon Lee" => "sangheon0724@gmail.com" }
   s.ios.deployment_target = "13.0"
-  s.source       = { :git => "https://github.com/sanghun0724/LogFlume", :tag => "0.1.0" }
+  s.osx.deployment_target = "10.15"
+  s.source       = { :git => "https://github.com/sanghun0724/LogFlume.git", :tag => "0.1.0" }
   s.source_files  = "Sources"
+  s.swift_versions = '5.0'
 end

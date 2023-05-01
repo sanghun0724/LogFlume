@@ -40,6 +40,7 @@
 		B6AFC8D929FCFB0500C9E16F /* LogType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogType.swift; sourceTree = "<group>"; };
 		B6AFC8DD29FD25C900C9E16F /* LoggingChannelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingChannelTests.swift; sourceTree = "<group>"; };
 		B6AFC8DF29FE66BB00C9E16F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B6C9942629FF915100E16272 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		B6AFC8A829F6A73800C9E16F = {
 			isa = PBXGroup;
 			children = (
+				B6C9942629FF915100E16272 /* Package.swift */,
 				B6AFC8CC29F6A75F00C9E16F /* LogFlume.md */,
 				B6AFC8B429F6A73800C9E16F /* Sources */,
 				B6AFC8C029F6A73800C9E16F /* Tests */,
